@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>Textfield | Material Design | CodeArtisan</title>
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Textfield | Material Design | CodeArtisan">
+    <meta name="theme-color" content="#4caf50">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Navigation Drawer">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#43a047">
+
+    <!-- Tile icon for Win8 -->
+    <meta name="msapplication-TileColor" content="#4caf50">
+    <meta name="msapplication-navbutton-color" content="#43a047">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Material+Icons' rel='stylesheet' type='text/css'>
+    <link href="css/app.css" rel="stylesheet">
+    <link href="css/textfield.css" rel="stylesheet">
+    <link href="css/docs.css" rel="stylesheet">
+    <style>
+        a{
+            text-decoration: none;
+        }
+        p{
+            margin-top: -20px;
+            font-size: 12px;
+            color: #f00;
+        }
+    </style>
+</head>
+<body class="md-layout md-layout--column md-align md-align--center-center">
+<header class="md-header md-header--primary is-fixed is-casting-shadow md-header--has-menu-button">
+    <a class="md-header__menu-button md-button--icon" href="javascript:;" data-toggle="drawer" data-target="#drawer-1">
+        <i class="material-icons">menu</i>
+    </a>
+    <div class="md-header__row">
+        <div class="md-header__title layout-m-l-3">Home</div>
+    </div>
+</header>
+<main>
+    <section>
+        <div class="md-container md-container--box">
+            <form>
+                <div class="md-row">
+                    <div class="md-col md-col--6">
+                        <div class="md-textfield md-textfield--full-width" data-toggle="textfield" data-float="true">
+                            <input class="md-textfield__input" type="text" required id="fname" maxlength="10" autocomplete="off" autofocus>
+                            <label for="fname" class="md-textfield__label">First Name</label>
+                        </div>
+                        <p id="fname--error"></p>
+                    </div>
+                    <div class="md-col md-col--6">
+                        <div class="md-textfield md-textfield--full-width" data-toggle="textfield" data-float="true">
+                            <input class="md-textfield__input" type="text" id="lname">
+                            <label for="lname" class="md-textfield__label">Last Name</label>
+                        </div>
+                        <p id="lname--error"></p>
+                    </div>
+                    <div class="md-col md-col--6">
+                        <div class="md-textfield md-textfield--full-width" data-toggle="textfield" data-float="true">
+                            <input class="md-textfield__input" type="number" id="number" max="100" min="70" step="10">
+                            <label for="number" class="md-textfield__label">Number</label>
+                        </div>
+                        <p id="number--error"></p>
+                    </div>
+                    <div class="md-col md-col--6">
+                        <div class="md-textfield md-textfield--full-width" data-toggle="textfield" data-float="true">
+                            <input class="md-textfield__input" type="tel" id="tel">
+                            <label for="tel" class="md-textfield__label">Phone</label>
+                        </div>
+                        <p id="phone--error"></p>
+                    </div>
+                    <div class="md-col md-col--6">
+                        <div class="md-textfield md-textfield--full-width" data-toggle="textfield" data-float="false">
+                            <input class="md-textfield__input" type="date" placeholder="date" id="date" pattern="\d{1,2}/\d{1,2}/\d{4}">
+                        </div>
+                    </div>
+                    <div class="md-col md-col--6">
+                        <div class="md-textfield md-textfield--full-width md-textfield md-textfield--full-width" data-toggle="textfield" data-float="true" data-count="true">
+                            <textarea class="md-textfield__input" id="message" rows="4" maxlength="10" data-count="true"></textarea>
+                            <label class="md-textfield__label" for="message">Message</label>
+                            <span class="md-textfield__counter"></span>
+                        </div>
+                    </div>
+                    <div class="md-col md-col--6">
+                        <div class="md-textfield md-textfield--full-width" data-toggle="textfield" data-float="true">
+                            <input class="md-textfield__input" type="email" id="email" required>
+                            <label for="email" class="md-textfield__label">Email</label>
+                        </div>
+                        <p id="email--error"></p>
+                    </div>
+                    <div class="md-col md-col--6">
+                        <div class="md-textfield md-textfield--full-width" data-toggle="textfield" data-float="true">
+                            <input class="md-textfield__input" type="password" id="password" required>
+                            <label for="password" class="md-textfield__label">Password</label>
+                        </div>
+                        <p id="password--error"></p>
+                    </div>
+
+                </div>
+                <a href="javascript:;"><button id="submitButton" class="md-button md-button--raised md-button--primary">Register</button></a>
+
+                <script src="js/jquery.js"></script>
+                <script src="js/textfield.js"></script>
+            </form>
+        </div>
+    </section>
+</main>
+<script>
+    $('#submitButton').click(function (e) {
+
+        var fname = $('#fname').val().trim();
+        var lname = $('#lname').val().trim();
+        var number = $('#number').val().trim();
+        var email = $('#email').val().trim();
+        var password = $('#password').val().trim();
+        var tel = $('#tel').val().trim();
+        var flag = 1;
+        var rem = number%10;
+
+        if(fname.length === 0){
+            $('#fname--error').text("Field is required");
+            flag=0;
+        }
+        if(lname.length === 0){
+            $('#lname--error').text("Field is required");
+            flag=0;
+        }
+        if(number < 70 || number >100){
+            $('#number--error').text("Not in range between 70-100");
+            flag=0;
+        }
+        if(email.length === 0){
+            $('#email--error').text("Field is required");
+            flag=0;
+        }
+        if(password.length === 0){
+            $('#password--error').text("Password can't be empty");
+            flag=0;
+        }
+        if(tel.length === 0){
+            $('#phone--error').text("Phone number can't be empty");
+            flag=0;
+        }
+        if(flag === 0){
+            e.preventDefault()
+        }
+
+
+    });
+    $("#fname").keyup (function (e) {
+         var fname, errorText;
+        fname = $(this).val().trim();
+        errorText = "";
+        if(fname.length === 0){
+            errorText = "Field is required";
+        }
+        else if(!isNaN(fname)){
+            errorText = "Input type mismatch";
+        }
+            $('#fname--error').text(errorText);
+    });
+    $("#lname").keyup (function (e) {
+        var lname, errorText;
+        lname = $(this).val().trim();
+        errorText = "";
+        if(lname.length === 0){
+            errorText = "Field is required";
+        }
+        else if(!isNaN(lname)){
+            errorText = "Input type mismatch";
+        }
+        $('#lname--error').text(errorText);
+    });
+    $("#number").keyup (function (e) {
+        var number,rem, errorText;
+        number = $(this).val().trim();
+        rem = number%10;
+        errorText = "";
+        if(number < 70 || number >100){
+            errorText = "Not in range between 70-100";
+        }
+        else if (rem !== 0){
+            errorText = "Must be in steps of 10 from 70 to 100"
+        }
+        else if(isNaN(number)){
+            errorText = "Input type mismatch";
+        }
+        $('#number--error').text(errorText);
+    });
+    $("#email").keyup (function (e) {
+        var email, errorText;
+        email = $(this).val().trim();
+        errorText = "";
+        if(email.length === 0){
+            errorText = "Field is required";
+        }
+        else if (email.indexOf('@') === -1) {
+            errorText = "Not a email format"
+        }
+        $('#email--error').text(errorText);
+    });
+    $("#password").keyup (function (e) {
+        var password, errorText;
+        password = $(this).val().trim();
+        errorText = "";
+        if(password.length === 0){
+            errorText = "Password can't be empty";
+        }
+       else if(password.length < 6){
+            errorText = "Password can't be less than 6 letters";
+        }
+        $('#password--error').text(errorText);
+    });
+    $("#tel").keyup (function (e) {
+        var tel, errorText;
+        tel = $(this).val().trim();
+        errorText = "";
+        if(tel.length === 0){
+            errorText = "Phone number can't be empty";
+        }
+        else if(tel.length < 10){
+            errorText = "Phone number must of 10 numbers";
+        }
+        else if(tel<=7000000000 || tel>=9999999999){
+            errorText = "Phone number not in range";
+        }
+        $('#phone--error').text(errorText);
+    });
+</script>
+
+
+</body>
+</html>
